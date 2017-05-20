@@ -47,6 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityTypeConfigurations\AutorConfiguration.cs" />
+    <Compile Include="EntityTypeConfigurations\CarritoConfiguration.cs" />
+    <Compile Include="EntityTypeConfigurations\ClienteConfiguration.cs" />
+    <Compile Include="EntityTypeConfigurations\ComprobanteConfiguration.cs" />
+    <Compile Include="EntityTypeConfigurations\EmpleadoConfiguration.cs" />
+    <Compile Include="EntityTypeConfigurations\LibreriaConfiguration.cs" />
+    <Compile Include="EntityTypeConfigurations\LibroConfiguration.cs" />
+    <Compile Include="EntityTypeConfigurations\LocalLibreriaConfiguration.cs" />
+    <Compile Include="EntityTypeConfigurations\NacionalidadConfiguration.cs" />
+    <Compile Include="EntityTypeConfigurations\PagoConfiguration.cs" />
+    <Compile Include="EntityTypeConfigurations\VentaConfiguration.cs" />
     <Compile Include="Migrations\201705200813018_InitialModel.cs" />
     <Compile Include="Migrations\201705200813018_InitialModel.Designer.cs">
       <DependentUpon>201705200813018_InitialModel.cs</DependentUpon>
@@ -70,5 +81,6 @@
       <DependentUpon>201705200813018_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
