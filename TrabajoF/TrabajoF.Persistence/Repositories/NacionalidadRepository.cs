@@ -10,5 +10,15 @@ namespace TrabajoF.Persistence.Repositories
 {
     public class NacionalidadRepository : Repository<Nacionalidad>, INacionalidadRepository
     {
+        private readonly TrabajoFDbContext _Context;
+
+        public NacionalidadRepository(TrabajoFDbContext context)
+        {
+            _Context = context;
+        }
+        private NacionalidadRepository()
+        {
+
+        }
     }
 }

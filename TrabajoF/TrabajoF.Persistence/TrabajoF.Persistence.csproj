@@ -78,6 +78,7 @@
     <Compile Include="Repositories\NacionalidadRepository.cs" />
     <Compile Include="Repositories\PagoRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\UnityOfWork.cs" />
     <Compile Include="Repositories\VentaRepository.cs" />
     <Compile Include="TrabajoFDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

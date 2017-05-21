@@ -63,6 +63,7 @@
     <Compile Include="IRepositories\INacionalidadRepository.cs" />
     <Compile Include="IRepositories\IPagoRepository.cs" />
     <Compile Include="IRepositories\IRepository.cs" />
+    <Compile Include="IRepositories\IUnityOfWork.cs" />
     <Compile Include="IRepositories\IVentaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Carrito.cs" />

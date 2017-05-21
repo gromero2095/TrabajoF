@@ -8,7 +8,17 @@ using TrabajoF.Entities.IRepositories;
 
 namespace TrabajoF.Persistence.Repositories
 {
-    public class LocalLibreriaRepository: Repository<LocalLibreria>, ILocalLibreriaRepository
+    public class LocalLibreriaRepository : Repository<LocalLibreria>, ILocalLibreriaRepository
     {
+        private readonly TrabajoFDbContext _Context;
+
+        public LocalLibreriaRepository(TrabajoFDbContext context)
+        {
+            _Context = context;
+        }
+        private LocalLibreriaRepository()
+        {
+
+        }
     }
 }

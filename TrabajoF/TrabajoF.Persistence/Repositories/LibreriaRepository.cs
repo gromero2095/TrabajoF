@@ -10,5 +10,15 @@ namespace TrabajoF.Persistence.Repositories
 {
     public class LibreriaRepository : Repository<Libreria>, ILibreriaRepository
     {
+        private readonly TrabajoFDbContext _Context;
+
+        public LibreriaRepository(TrabajoFDbContext context)
+        {
+            _Context = context;
+        }
+        private LibreriaRepository()
+        {
+
+        }
     }
 }

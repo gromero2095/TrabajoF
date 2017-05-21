@@ -10,6 +10,18 @@ namespace TrabajoF.Persistence.Repositories
 {
     public class AutorRepository : Repository <Autor>, IAutorRepository
     {
+        private readonly TrabajoFDbContext _Context;
+
+        private AutorRepository()
+        {
+
+        }
+
+        public AutorRepository(TrabajoFDbContext context)
+        {
+
+            _Context = context;
+        }
 
     }
 }

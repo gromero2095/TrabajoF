@@ -8,7 +8,17 @@ using TrabajoF.Entities.IRepositories;
 
 namespace TrabajoF.Persistence.Repositories
 {
-    public class EmpleadoRepository: Repository<Empleado>, IEmpleadoRepository
+    public class EmpleadoRepository : Repository<Empleado>, IEmpleadoRepository
     {
+        private readonly TrabajoFDbContext _Context;
+
+        public EmpleadoRepository(TrabajoFDbContext context)
+        {
+            _Context = context;
+        }
+        private EmpleadoRepository()
+        {
+
+        }
     }
 }

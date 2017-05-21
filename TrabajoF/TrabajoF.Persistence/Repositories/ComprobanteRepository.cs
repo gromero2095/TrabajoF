@@ -10,5 +10,15 @@ namespace TrabajoF.Persistence.Repositories
 {
     public class ComprobanteRepository : Repository<Comprobante>, IComprobanteRepository
     {
+        private readonly TrabajoFDbContext _Context;
+
+        public ComprobanteRepository(TrabajoFDbContext context)
+        {
+            _Context = context;
+        }
+        private ComprobanteRepository()
+        {
+
+        }
     }
 }

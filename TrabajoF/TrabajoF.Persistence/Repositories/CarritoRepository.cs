@@ -8,7 +8,18 @@ using TrabajoF.Entities.IRepositories;
 
 namespace TrabajoF.Persistence.Repositories
 {
-    public class CarritoRepository : Repository <Carrito>, ICarritoRepository
+    public class CarritoRepository : Repository<Carrito>, ICarritoRepository
     {
+        private readonly TrabajoFDbContext _Context;
+
+        public CarritoRepository(TrabajoFDbContext context)
+        {
+            _Context = context;
+        }
+
+        public CarritoRepository()
+        {
+
+        }
     }
 }
