@@ -16,6 +16,23 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
             Property(v => v.Correo)
                 .IsRequired()
                 .HasMaxLength(255);
+            Property(v => v.EnviarNom)
+                .IsRequired()
+                .HasMaxLength(100);
+            Property(v => v.EnviarApe)
+                .IsRequired()
+                .HasMaxLength(100);
+            Property(v => v.EnviarDireccion)
+                .IsRequired()
+                .HasMaxLength(100);
+            Property(v => v.EnviarDistrito)
+                .IsRequired()
+                .HasMaxLength(100);
+
+           
+
+
+
         }
     }
 }

@@ -9,31 +9,35 @@ namespace TrabajoF.Entities
     public class Venta
     {
         public int Ventaid { get; set; }
-        public string Libros { get; set; }
+        public string Libro { get; set; }
         public int MontoTotal { get; set; }
         public int FechaTrans { get; set; }
-        public string ModalidadRecogo { get; set; }
         public string Estado { get; set; }
-        public List<Libro> Libro { get; set; }
+
+        
+        public Carrito Carrito { get; set; }
+        public int Carritoid { get; set; }
         public Cliente Cliente { get; set; }
+        public int Clienteid { get; set; }
         public Pago Pago{ get; set; }
         public Envio Envio { get; set; }
+        public Comprobante Comprobante { get; set; }
+        public int Comprobanteid{ get; set; }
+        public List<Libro> Libros{ get; set; }
 
         public Venta()
         {
-            Libro = new List<Libro>();
-
+            Libros = new List<Libro>();
         }
+        /*
         public Venta(Cliente cliente, Pago pago, Envio envio,int libroId,int ventaId  )
         {
             Ventaid = ventaId;
-            Libro = new List<Libro>(libroId);
             Cliente = cliente;
             Pago = pago;
             Envio = envio;
-
-
         }
 
+    */
     }
 }

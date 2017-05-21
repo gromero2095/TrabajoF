@@ -13,9 +13,7 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
     {
         public VentaConfiguration ()
         {
-            Property(v => v.Libros)
-                .IsRequired()
-                .HasMaxLength(255);
+            
 
         }
     }

@@ -11,11 +11,12 @@ namespace TrabajoF.Entities
         public int Nacionalidadid { get; set; }
         public string Nombre { get; set; }
         public TipoPago TipoPago{ get; set; }
+        public List<Autor> Autores { get; set; }
 
-        public Nacionalidad(TipoPago tipoPago, int NacionalidadId)
+        public Nacionalidad()
         {
-            Nacionalidadid = NacionalidadId;
-            TipoPago = tipoPago;
+            
+          
         }
 }
 }

@@ -8,6 +8,8 @@ namespace TrabajoF.Entities
 {
     public class Carrito
     {
+        
+
         public int Carritoid { get; set; }
         public string Correo { get; set; }
         public int Telefono { get; set; }

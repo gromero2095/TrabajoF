@@ -16,12 +16,24 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                 .IsRequired()
                 .HasMaxLength(255);
 
-          /*  HasRequired(v => v.Autor)
-                .WithMany(l => l.Libro)
-                .HasForeignKey(v => v.Autorid);
-                */
-      
-            
+            //Relacion Libro - Autor
+            HasRequired(v => v.Autor)
+                  .WithMany(l => l.Libros)
+                  .HasForeignKey(v => v.Autorid);
+           
+
+            //Relacion Libro - Carrito
+            HasRequired(v => v.Carrito)
+                     .WithMany(g => g.Libros)
+                     .HasForeignKey(v => v.Carritoid);
+
+            //Relacion Libros - Venta
+            HasRequired(v => v.Venta)
+                     .WithMany(g => g.Libros)
+                     .HasForeignKey(v => v.Ventaid);
+
+        
+
 
         }
     }

@@ -22,6 +22,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                 .IsRequired()
                 .HasMaxLength(100);
 
+            HasRequired(v => v.Nacionalidad)
+                     .WithMany(t => t.Autores)
+                     .HasForeignKey(v => v.Nacionalidadid);
 
         }
     }

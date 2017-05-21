@@ -12,15 +12,14 @@ namespace TrabajoF.Entities
         public int LocalLibreriaid { get; set; }
         public string Direccion { get; set; }
         public Empleado Empleado { get; set; }
+        public Libreria Libreria { get; set; }
+        public int Libreriaid { get; set; }
+
 
         public LocalLibreria()
         {
 
         }
-        public LocalLibreria(int LocalLibreriaId,Empleado empleado)
-        {
-            Empleado = empleado;
-            LocalLibreriaid = LocalLibreriaId;
-        }
+        
 }
 }
