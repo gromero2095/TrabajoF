@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,13 @@ namespace TrabajoF.Entities
         public string Valoracion { get; set; }
         public Autor Autor { get; set;}
         public int Autorid { get; set; }
+        public TipoLibro TipoLibro { get; set; }
+        public ICollection<Autor> Autores { get; set; }
+        public Categoria Categoria { get; set; }
+
         public Libro()
         {
+            Autores = new Collection<Autor>();
 
         }
     }

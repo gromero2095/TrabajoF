@@ -18,10 +18,17 @@ namespace TrabajoF.Entities
         public string Estado { get; set; }
         public string Direccion { get; set; }
         public string Correo { get; set; }
+        public TipoEmpleado TipoEmpleado { get; set; }
 
         public Empleado()
         {
+            TipoEmpleado = TipoEmpleado.NoDefinido;
+        }
 
+        public Empleado(int empleadoId, TipoEmpleado tipoEmpleado)
+        {
+            Empleadoid = empleadoId;
+            TipoEmpleado = tipoEmpleado;
         }
 }
 }

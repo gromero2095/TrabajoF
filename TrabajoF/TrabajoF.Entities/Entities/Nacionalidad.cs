@@ -10,10 +10,12 @@ namespace TrabajoF.Entities
     {
         public int Nacionalidadid { get; set; }
         public string Nombre { get; set; }
+        public TipoPago TipoPago{ get; set; }
 
-        public Nacionalidad()
+        public Nacionalidad(TipoPago tipoPago, int NacionalidadId)
         {
-
+            Nacionalidadid = NacionalidadId;
+            TipoPago = tipoPago;
         }
 }
 }

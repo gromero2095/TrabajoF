@@ -14,7 +14,7 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
         {
             Property(v => v.Nombre)
                 .IsRequired()
-                .HasMaxLength(255);
+                .HasMaxLength(50);
             
 
         }

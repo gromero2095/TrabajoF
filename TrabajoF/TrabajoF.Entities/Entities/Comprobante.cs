@@ -11,7 +11,8 @@ namespace TrabajoF.Entities
         public int Comprobanteid { get; set; }
         public int Fecha { get; set; }
         public int Total { get; set; }
-       
+        public Cliente Cliente { get; set; }
+        public Venta Venta { get; set; }
 
         public Comprobante()
         {

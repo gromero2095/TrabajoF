@@ -15,11 +15,11 @@ namespace TrabajoF.Entities
         public string EnviarApe { get; set; }
         public string EnviarDireccion { get; set; }
         public string EnviarDistrito { get; set; }
-
+        public List<Libro> Libros { get; set; }
 
         public Carrito()
         {
-
+            Libros = new List<Libro>();
         }
     }
 }
