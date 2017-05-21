@@ -14,9 +14,14 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
         {
             Property(v => v.Nombres)
                 .IsRequired()
-                .HasMaxLength(255);
+                .HasMaxLength(50);
+            Property(v => v.ApePaterno)
+                .IsRequired()
+                .HasMaxLength(100);
+            Property(v => v.ApeMaterno)
+                .IsRequired()
+                .HasMaxLength(100);
 
         }
-  
     }
 }

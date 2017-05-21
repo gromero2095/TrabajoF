@@ -62,6 +62,10 @@
     <Compile Include="Migrations\201705200813018_InitialModel.Designer.cs">
       <DependentUpon>201705200813018_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705210558100_ActuConfiguration.cs" />
+    <Compile Include="Migrations\201705210558100_ActuConfiguration.Designer.cs">
+      <DependentUpon>201705210558100_ActuConfiguration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TrabajoFDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +83,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705200813018_InitialModel.resx">
       <DependentUpon>201705200813018_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705210558100_ActuConfiguration.resx">
+      <DependentUpon>201705210558100_ActuConfiguration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

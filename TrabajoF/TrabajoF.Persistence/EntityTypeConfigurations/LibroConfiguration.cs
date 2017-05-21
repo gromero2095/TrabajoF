@@ -16,10 +16,12 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                 .IsRequired()
                 .HasMaxLength(255);
 
-            HasRequired(v => v.Autor)
+          /*  HasRequired(v => v.Autor)
                 .WithMany(l => l.Libro)
                 .HasForeignKey(v => v.Autorid);
-
+                */
+      
+            
 
         }
     }

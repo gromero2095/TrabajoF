@@ -15,7 +15,13 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
             Property(v => v.Nombre)
                 .IsRequired()
                 .HasMaxLength(50);
-            
+            Property(v => v.Apellido)
+                .IsRequired()
+                .HasMaxLength(100);
+            Property(v => v.FechadeNacimiento)
+                .IsRequired()
+                .HasMaxLength(100);
+
 
         }
     }
