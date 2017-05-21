@@ -8,6 +8,6 @@ namespace TrabajoF.Entities
 {
     public enum TipoEmpleado
     {
-        Admin_Libreria, Jefe_Local, NoDefinido
+        Admin_Libreria, Jefe_Libreria, NoDefinido
     }
 }

@@ -15,12 +15,18 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
             Property(v => v.Editorial)
                 .IsRequired()
                 .HasMaxLength(255);
+            Property(v => v.Estado)
+                .IsRequired()
+                .HasMaxLength(100);
+            Property(v => v.Valoracion)
+                .IsRequired()
+                .HasMaxLength(100);
 
             //Relacion Libro - Autor
             HasRequired(v => v.Autor)
                   .WithMany(l => l.Libros)
                   .HasForeignKey(v => v.Autorid);
-           
+
 
             //Relacion Libro - Carrito
             HasRequired(v => v.Carrito)

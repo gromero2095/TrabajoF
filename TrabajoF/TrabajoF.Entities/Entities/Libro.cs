@@ -9,7 +9,7 @@ namespace TrabajoF.Entities
 {
     public class Libro
     {
-        public int Carritoid { get; set; }
+        public int Libroid { get; set; }
         public string Editorial { get; set; }
         public double Precio { get; set; }
         public string Estado { get; set; }
@@ -19,9 +19,10 @@ namespace TrabajoF.Entities
         public Autor Autor { get; set;}
         public int Autorid { get; set; }
         public Carrito Carrito { get; set; }
-        public TipoLibro TipoLibro { get; set; }
-        public List<Autor> Autores { get; set; }
+        public int Carritoid { get; set; }
+        public TipoLibro TipoLibro { get; set; }     
         public Categoria Categoria { get; set; }
+        public List<Autor> Autores { get; set; }
         public Venta Venta { get; set; }
         public int Ventaid { get; set; }
 

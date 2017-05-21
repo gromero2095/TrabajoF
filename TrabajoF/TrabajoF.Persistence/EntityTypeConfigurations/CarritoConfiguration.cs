@@ -31,8 +31,6 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
 
            
 
-
-
         }
     }
 }

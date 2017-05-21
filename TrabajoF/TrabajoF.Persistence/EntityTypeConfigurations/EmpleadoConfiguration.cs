@@ -21,6 +21,19 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
             Property(v => v.ApeMaterno)
                 .IsRequired()
                 .HasMaxLength(100);
+            Property(v => v.Sexo)
+                .IsRequired()
+                .HasMaxLength(25);
+            Property(v => v.Estado)
+                .IsRequired()
+                .HasMaxLength(200);
+            Property(v => v.Direccion)
+                .IsRequired()
+                .HasMaxLength(255);
+            Property(v => v.Correo)
+                .IsRequired()
+                .HasMaxLength(150);
+
 
         }
     }

@@ -8,6 +8,7 @@ namespace TrabajoF.Entities
 {
     public class Venta
     {
+      
         public int Ventaid { get; set; }
         public string Libro { get; set; }
         public int MontoTotal { get; set; }

@@ -16,6 +16,8 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                 .IsRequired()
                 .HasMaxLength(255);
 
+            
+
         }
     }
 }

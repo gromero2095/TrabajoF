@@ -13,8 +13,7 @@ namespace TrabajoF.Entities
         public int RUCLibreria { get; set; }
         public List<Empleado> Empleados { get; set; }
         public List<LocalLibreria> LocalLibrerias { get; set; }
-        public Empleado EmpleadoId{ get; set; }
-        public LocalLibreria LocalLibreriaId { get; set; }
+
         
 
         public Libreria()

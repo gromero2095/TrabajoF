@@ -19,8 +19,7 @@ namespace TrabajoF.Entities
         public string Direccion { get; set; }
         public string Correo { get; set; }
         public TipoEmpleado TipoEmpleado { get; set; }
-        public Libreria Libreria { get; set; }
-        public int Libreriaid { get; set; }
+        public List <Libreria> Librerias { get; set; }
 
         public Empleado()
         {

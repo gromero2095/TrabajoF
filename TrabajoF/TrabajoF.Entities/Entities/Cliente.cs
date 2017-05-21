@@ -18,7 +18,8 @@ namespace TrabajoF.Entities
         public int Telefono { get; set; }
         public string Sexo { get; set; }
         public string Correo { get; set; }
-
+        public List <Venta> Ventas{ get; set; }
+        public List <Comprobante> Comprobantes { get; set; }
         public Cliente()
         {
 
