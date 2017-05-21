@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabajoF.Entities.IRepositories
 {
-    public interface ICarritoRepository : IRepository<Carrito>
+    public interface ILibroRepository : IRepository <Libro>
     {
     }
 }

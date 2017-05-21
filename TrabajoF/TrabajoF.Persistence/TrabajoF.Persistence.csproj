@@ -67,6 +67,18 @@
       <DependentUpon>201705210558100_ActuConfiguration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repositories\AutorRepository.cs" />
+    <Compile Include="Repositories\CarritoRepository.cs" />
+    <Compile Include="Repositories\ClienteRepository.cs" />
+    <Compile Include="Repositories\ComprobanteRepository.cs" />
+    <Compile Include="Repositories\EmpleadoRepository.cs" />
+    <Compile Include="Repositories\LibreriaRepository.cs" />
+    <Compile Include="Repositories\LibroRepository.cs" />
+    <Compile Include="Repositories\LocalLibreriaRepository.cs" />
+    <Compile Include="Repositories\NacionalidadRepository.cs" />
+    <Compile Include="Repositories\PagoRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\VentaRepository.cs" />
     <Compile Include="TrabajoFDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

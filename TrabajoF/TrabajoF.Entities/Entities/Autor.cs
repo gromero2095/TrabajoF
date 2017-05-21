@@ -14,6 +14,7 @@ namespace TrabajoF.Entities
         public string FechadeNacimiento { get; set; }
         public List<Libro> Libro{ get; set; }
         public int Libroid { get; set; }
+
         public Autor()
         {
             Libro = new List<Libro>();
