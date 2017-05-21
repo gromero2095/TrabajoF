@@ -12,7 +12,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
     {
         public NacionalidadConfiguration()
         {
-
+            Property(v => v.Nombre)
+                .IsRequired()
+                .HasMaxLength(255);
 
         }
     }

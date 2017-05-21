@@ -12,11 +12,11 @@ namespace TrabajoF.Entities
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string FechadeNacimiento { get; set; }
+        public List<Libro>  Libro{ get; set; }
 
-      
         public Autor()
         {
-            
+            Libro = new List<Libro>();
         }
     }
 }

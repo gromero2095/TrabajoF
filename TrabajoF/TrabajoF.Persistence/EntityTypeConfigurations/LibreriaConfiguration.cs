@@ -13,6 +13,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
 
         public LibreriaConfiguration()
         {
+            Property(v => v.Nombre)
+                .IsRequired()
+                .HasMaxLength(255);
 
         }
     }

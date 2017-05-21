@@ -12,6 +12,14 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
     {
         public LibroConfiguration()
         {
+            Property(v => v.Editorial)
+                .IsRequired()
+                .HasMaxLength(255);
+
+            HasRequired(v => v.Autor)
+                .WithMany(l => l.Libro)
+                .HasForeignKey(v => v.Autorid);
+
 
         }
     }

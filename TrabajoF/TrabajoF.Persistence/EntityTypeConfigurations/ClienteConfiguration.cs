@@ -12,6 +12,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
     {
         public ClienteConfiguration()
         {
+            Property(v => v.Nombres)
+                .IsRequired()
+                .HasMaxLength(255);
 
         }
     }

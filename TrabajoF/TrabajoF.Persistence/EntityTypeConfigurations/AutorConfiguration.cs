@@ -12,7 +12,10 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
     {
         public AutorConfiguration()
         {
-
+            Property(v => v.Nombre)
+                .IsRequired()
+                .HasMaxLength(255);
+            
 
         }
     }

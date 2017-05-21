@@ -13,7 +13,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
 
         public CarritoConfiguration()
         {
-
+            Property(v => v.Correo)
+                .IsRequired()
+                .HasMaxLength(255);
         }
     }
 }

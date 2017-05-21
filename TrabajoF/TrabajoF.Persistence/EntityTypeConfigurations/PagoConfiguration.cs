@@ -12,7 +12,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
     {
         public PagoConfiguration()
         {
-
+            Property(v => v.Descripcion)
+                .IsRequired()
+                .HasMaxLength(255);
         }
     }
 }

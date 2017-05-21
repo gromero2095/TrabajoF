@@ -12,6 +12,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
     {
         public EmpleadoConfiguration()
         {
+            Property(v => v.Nombres)
+                .IsRequired()
+                .HasMaxLength(255);
 
         }
   

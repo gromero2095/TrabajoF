@@ -9,7 +9,7 @@ namespace TrabajoF.Entities
     public class Pago
     {
         public int Pagoid { get; set; }
-
+        public string Descripcion { get; set; }
         public Pago()
         {
 

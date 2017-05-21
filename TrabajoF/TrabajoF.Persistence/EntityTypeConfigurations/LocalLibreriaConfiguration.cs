@@ -12,7 +12,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
     {
         public LocalLibreriaConfiguration()
         {
-
+            Property(v => v.Direccion)
+                .IsRequired()
+                .HasMaxLength(255);
 
         }
     }

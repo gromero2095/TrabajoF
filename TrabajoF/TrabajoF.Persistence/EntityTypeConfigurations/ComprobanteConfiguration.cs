@@ -13,7 +13,7 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
 
         public ComprobanteConfiguration()
         {
-
+           
         }
     }
 }

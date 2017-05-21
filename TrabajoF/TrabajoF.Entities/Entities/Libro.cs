@@ -15,7 +15,8 @@ namespace TrabajoF.Entities
         public int Stock { get; set; }
         public DateTime AñoPublicacion { get; set; }
         public string Valoracion { get; set; }
-
+        public Autor Autor { get; set;}
+        public int Autorid { get; set; }
         public Libro()
         {
 
