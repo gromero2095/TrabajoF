@@ -12,6 +12,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
     {
         public AutorConfiguration()
         {
+            ToTable("Autor")
+                .HasKey(c => c.Autorid);
+
             Property(v => v.Nombre)
                 .IsRequired()
                 .HasMaxLength(50);
@@ -22,9 +25,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                 .IsRequired()
                 .HasMaxLength(100);
 
-            HasRequired(v => v.Nacionalidad)
-                     .WithMany(t => t.Autores)
-                     .HasForeignKey(v => v.Nacionalidadid);
+            HasMany(c => c.Libros)
+                 .WithMany(t => t.Autores)
+                 .Map(m => m.ToTable("Libros"));
 
         }
     }

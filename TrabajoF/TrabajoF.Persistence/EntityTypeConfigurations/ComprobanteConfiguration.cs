@@ -13,13 +13,14 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
 
         public ComprobanteConfiguration()
         {
+            ToTable("Comprobante")
+             .HasKey(c => c.Comprobanteid);
+
             Property(v => v.Descripcion)
                 .IsRequired()
                 .HasMaxLength(255);
 
-            HasRequired(v => v.Cliente)
-                 .WithMany(l => l.Comprobantes)
-                 .HasForeignKey(v => v.Clienteid);
+        
         }
     }
 }

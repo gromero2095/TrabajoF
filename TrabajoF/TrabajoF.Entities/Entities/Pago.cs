@@ -11,6 +11,9 @@ namespace TrabajoF.Entities
         public int Pagoid { get; set; }
         public string Descripcion { get; set; }
         public TipoPago TipoPago { get; set; }
+
+        public Venta Venta { get; set; }
+
         public Pago()
         {
 

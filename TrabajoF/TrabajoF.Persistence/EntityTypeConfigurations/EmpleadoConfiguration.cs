@@ -12,6 +12,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
     {
         public EmpleadoConfiguration()
         {
+            ToTable("Empleado")
+             .HasKey(c => c.Empleadoid);
+
             Property(v => v.Nombres)
                 .IsRequired()
                 .HasMaxLength(50);
@@ -34,7 +37,12 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                 .IsRequired()
                 .HasMaxLength(150);
 
+            HasMany(a => a.Libros)
+                 .WithRequired(c => c.Empleados)
+                 .HasForeignKey(c => c.Empleadoid);
 
+            HasRequired(c => c.Locallibreria)
+                 .WithRequiredPrincipal(c => c.Empleado);
         }
     }
 }

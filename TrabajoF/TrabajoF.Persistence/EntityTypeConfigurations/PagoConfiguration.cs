@@ -12,6 +12,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
     {
         public PagoConfiguration()
         {
+            ToTable("Pago")
+                .HasKey(c => c.Pagoid);
+
             Property(v => v.Descripcion)
                 .IsRequired()
                 .HasMaxLength(255);

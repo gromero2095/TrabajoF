@@ -13,6 +13,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
     {
         public VentaConfiguration ()
         {
+            ToTable("Venta")
+                .HasKey(c => c.Ventaid);
+
             Property(v => v.Libro)
                .IsRequired()
                .HasMaxLength(255);
@@ -21,12 +24,14 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                 .IsRequired()
                 .HasMaxLength(50);
 
-            //Relacion Venta - Cliente
+            HasOptional(c => c.Carrito)
+                .WithRequired(c => c.Venta);
 
+            HasRequired(c => c.Pago)
+                .WithRequiredPrincipal(c => c.Venta);
 
-            //Relacion Venta - Comprobante
-
-
+            HasRequired(c => c.Comprobante)
+                .WithRequiredPrincipal(c => c.Venta);
 
         }
     }

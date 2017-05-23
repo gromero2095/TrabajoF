@@ -19,10 +19,16 @@ namespace TrabajoF.Entities
         public string Sexo { get; set; }
         public string Correo { get; set; }
         public List <Venta> Ventas{ get; set; }
+
+        public Comprobante Comprobante { get; set; }
+        public int Comprobanteid { get; set; }
         public List <Comprobante> Comprobantes { get; set; }
+        public Carrito Carrito { get; set; }
+
         public Cliente()
         {
-
+            Comprobantes = new List<Comprobante>();
+            
         }
 }
 }

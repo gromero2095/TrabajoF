@@ -13,10 +13,18 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
 
         public LibreriaConfiguration()
         {
+            ToTable("Libreria")
+             .HasKey(c => c.Libreriaid);
+
             Property(v => v.Nombre)
                 .IsRequired()
                 .HasMaxLength(255);
-            
+
+           HasMany (v => v.LocalLibrerias)
+                .WithRequired(l => l.Libreria)
+                .HasForeignKey(v => v.LocalLibreriaid);
+
+
 
         }
     }

@@ -58,18 +58,6 @@
     <Compile Include="EntityTypeConfigurations\NacionalidadConfiguration.cs" />
     <Compile Include="EntityTypeConfigurations\PagoConfiguration.cs" />
     <Compile Include="EntityTypeConfigurations\VentaConfiguration.cs" />
-    <Compile Include="Migrations\201705200813018_InitialModel.cs" />
-    <Compile Include="Migrations\201705200813018_InitialModel.Designer.cs">
-      <DependentUpon>201705200813018_InitialModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705210558100_ActuConfiguration.cs" />
-    <Compile Include="Migrations\201705210558100_ActuConfiguration.Designer.cs">
-      <DependentUpon>201705210558100_ActuConfiguration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705212128520_ModifConfiguration.cs" />
-    <Compile Include="Migrations\201705212128520_ModifConfiguration.Designer.cs">
-      <DependentUpon>201705212128520_ModifConfiguration.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\AutorRepository.cs" />
     <Compile Include="Repositories\CarritoRepository.cs" />
@@ -96,17 +84,6 @@
       <Project>{bdcc42e6-f02a-42a8-a1c6-996debdfd0c6}</Project>
       <Name>TrabajoF.Entities</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705200813018_InitialModel.resx">
-      <DependentUpon>201705200813018_InitialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705210558100_ActuConfiguration.resx">
-      <DependentUpon>201705210558100_ActuConfiguration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705212128520_ModifConfiguration.resx">
-      <DependentUpon>201705212128520_ModifConfiguration.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

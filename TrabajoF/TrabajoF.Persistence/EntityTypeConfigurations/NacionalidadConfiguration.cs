@@ -12,9 +12,16 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
     {
         public NacionalidadConfiguration()
         {
+            ToTable("Nacionalidad")
+             .HasKey(c => c.Nacionalidadid);
+
             Property(v => v.Nombre)
                 .IsRequired()
                 .HasMaxLength(255);
+
+            HasMany(a => a.Autores)
+                .WithRequired(c => c.Nacionalidad)
+                .HasForeignKey(c => c.Nacionalidadid);
 
         }
     }

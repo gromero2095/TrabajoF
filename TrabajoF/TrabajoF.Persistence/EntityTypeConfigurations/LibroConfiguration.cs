@@ -12,6 +12,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
     {
         public LibroConfiguration()
         {
+            ToTable("Libro")
+                .HasKey(c => c.Libroid);
+
             Property(v => v.Editorial)
                 .IsRequired()
                 .HasMaxLength(255);
@@ -23,20 +26,14 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                 .HasMaxLength(100);
 
             //Relacion Libro - Autor
-            HasRequired(v => v.Autor)
-                  .WithMany(l => l.Libros)
-                  .HasForeignKey(v => v.Autorid);
+            HasMany(c => c.Autores)
+                 .WithMany(t => t.Libros)
+                 .Map(m => m.ToTable("Autores"));
 
 
-            //Relacion Libro - Carrito
-            HasRequired(v => v.Carrito)
-                     .WithMany(g => g.Libros)
-                     .HasForeignKey(v => v.Carritoid);
 
-            //Relacion Libros - Venta
-            HasRequired(v => v.Venta);
-
-
+        
+            
 
         
 

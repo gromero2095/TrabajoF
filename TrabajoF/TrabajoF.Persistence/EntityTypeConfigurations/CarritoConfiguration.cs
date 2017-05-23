@@ -13,6 +13,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
 
         public CarritoConfiguration()
         {
+            ToTable("Carrito")
+             .HasKey(c => c.Carritoid);
+
             Property(v => v.Correo)
                 .IsRequired()
                 .HasMaxLength(255);
@@ -29,6 +32,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                 .IsRequired()
                 .HasMaxLength(100);
 
+            HasMany(c => c.Libros)
+                .WithRequired(l => l.Carrito)
+                .HasForeignKey(c => c.Carritoid);
            
 
         }

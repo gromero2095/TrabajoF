@@ -12,6 +12,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
     {
         public ClienteConfiguration()
         {
+            ToTable("Cliente")
+              .HasKey(c => c.Clienteid);
+
             Property(v => v.Nombres)
                 .IsRequired()
                 .HasMaxLength(100);
@@ -31,6 +34,11 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                 .IsRequired()
                 .HasMaxLength(100);
 
+            HasRequired(c => c.Comprobante)
+                .WithRequiredPrincipal(c => c.Cliente);
+
+            HasRequired(c => c.Carrito)
+                .WithRequiredPrincipal(c => c.Cliente);
         }
     }
 }

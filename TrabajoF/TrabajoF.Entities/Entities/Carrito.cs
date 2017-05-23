@@ -20,6 +20,7 @@ namespace TrabajoF.Entities
 
         public List<Libro> Libros { get; set; }
         public Cliente Cliente { get; set; }
+        public Venta Venta { get; set; }
 
 
         public Carrito()

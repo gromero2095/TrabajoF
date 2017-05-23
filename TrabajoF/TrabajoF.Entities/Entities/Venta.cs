@@ -18,7 +18,10 @@ namespace TrabajoF.Entities
         
         public Carrito Carrito { get; set; }
         public int Carritoid { get; set; }
-        
+        public LocalLibreria LocalLibreria { get; set; }
+        public int LocalLibreriaid { get; set; }
+        public Comprobante Comprobante { get; set; }
+
         public Pago Pago{ get; set; }
         public Envio Envio { get; set; }
 

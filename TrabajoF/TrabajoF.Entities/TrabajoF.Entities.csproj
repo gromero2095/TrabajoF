@@ -41,12 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Autor.cs" />
-    <Compile Include="Entities\Categoria.cs" />
-    <Compile Include="Entities\ClasificacionLibro.cs" />
+    <Compile Include="Enum\Categoria.cs" />
+    <Compile Include="Enum\ClasificacionLibro.cs" />
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Comprobante.cs" />
     <Compile Include="Entities\Empleado.cs" />
-    <Compile Include="Entities\Envio.cs" />
+    <Compile Include="Enum\Envio.cs" />
     <Compile Include="Entities\Libreria.cs" />
     <Compile Include="Entities\Libro.cs" />
     <Compile Include="Entities\LocalLibreria.cs" />
@@ -67,9 +67,9 @@
     <Compile Include="IRepositories\IVentaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Carrito.cs" />
-    <Compile Include="Entities\TipoEmpleado.cs" />
-    <Compile Include="Entities\TipoLibro.cs" />
-    <Compile Include="Entities\TipoPago.cs" />
+    <Compile Include="Enum\TipoEmpleado.cs" />
+    <Compile Include="Enum\TipoLibro.cs" />
+    <Compile Include="Enum\TipoPago.cs" />
     <Compile Include="Entities\Venta.cs" />
   </ItemGroup>
   <ItemGroup />

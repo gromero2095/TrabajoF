@@ -21,7 +21,7 @@ namespace TrabajoF.Entities
         public int Ventasid { get; set; }
         public Envio Envio { get; set; }
 
-        public Comprobante(Cliente cliente, Venta venta)
+       public Comprobante(Cliente cliente, Venta venta)
         {
             Cliente = cliente;
             Venta = venta;
