@@ -58,9 +58,9 @@
     <Compile Include="EntityTypeConfigurations\NacionalidadConfiguration.cs" />
     <Compile Include="EntityTypeConfigurations\PagoConfiguration.cs" />
     <Compile Include="EntityTypeConfigurations\VentaConfiguration.cs" />
-    <Compile Include="Migrations\201705231949526_AddConfigurationNew.cs" />
-    <Compile Include="Migrations\201705231949526_AddConfigurationNew.Designer.cs">
-      <DependentUpon>201705231949526_AddConfigurationNew.cs</DependentUpon>
+    <Compile Include="Migrations\201705232100335_InitialModel.cs" />
+    <Compile Include="Migrations\201705232100335_InitialModel.Designer.cs">
+      <DependentUpon>201705232100335_InitialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\AutorRepository.cs" />
@@ -90,8 +90,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705231949526_AddConfigurationNew.resx">
-      <DependentUpon>201705231949526_AddConfigurationNew.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705232100335_InitialModel.resx">
+      <DependentUpon>201705232100335_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -22,10 +22,10 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
             HasRequired(c => c.Empleado)
                .WithRequiredPrincipal(c => c.Locallibreria);
 
-            /*   HasMany(c => c.Ventas)
-                   .WithRequired(l => l.LocalLibreria)
-                    .HasForeignKey(c => c.LocalLibreriaid);
-              */
+            HasMany(c => c.Ventas)
+                   .WithRequired(l => l.Locallibreria)
+                    .HasForeignKey(l => l.LocalLibreriaId);
+             
 
         }
     }

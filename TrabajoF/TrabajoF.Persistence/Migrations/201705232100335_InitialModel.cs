@@ -3,7 +3,7 @@ namespace TrabajoF.Persistence.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddConfigurationNew : DbMigration
+    public partial class InitialModel : DbMigration
     {
         public override void Up()
         {
@@ -17,10 +17,13 @@ namespace TrabajoF.Persistence.Migrations
                         FechadeNacimiento = c.String(nullable: false, maxLength: 100),
                         Libroid = c.Int(nullable: false),
                         Nacionalidadid = c.Int(nullable: false),
+                        Libro_Libroid = c.Int(),
                     })
                 .PrimaryKey(t => t.Autorid)
+                .ForeignKey("dbo.Libro", t => t.Libro_Libroid)
                 .ForeignKey("dbo.Nacionalidad", t => t.Nacionalidadid, cascadeDelete: true)
-                .Index(t => t.Nacionalidadid);
+                .Index(t => t.Nacionalidadid)
+                .Index(t => t.Libro_Libroid);
             
             CreateTable(
                 "dbo.Libro",
@@ -39,17 +42,16 @@ namespace TrabajoF.Persistence.Migrations
                         Categoria = c.Int(nullable: false),
                         Ventaid = c.Int(),
                         Empleadoid = c.Int(nullable: false),
-                        Autor_Autorid = c.Int(),
                     })
                 .PrimaryKey(t => t.Libroid)
-                .ForeignKey("dbo.Autor", t => t.Autor_Autorid)
                 .ForeignKey("dbo.Empleado", t => t.Empleadoid, cascadeDelete: true)
                 .ForeignKey("dbo.Carrito", t => t.Carritoid, cascadeDelete: true)
                 .ForeignKey("dbo.Venta", t => t.Ventaid)
+                .ForeignKey("dbo.Autor", t => t.Autorid, cascadeDelete: true)
+                .Index(t => t.Autorid)
                 .Index(t => t.Carritoid)
                 .Index(t => t.Ventaid)
-                .Index(t => t.Empleadoid)
-                .Index(t => t.Autor_Autorid);
+                .Index(t => t.Empleadoid);
             
             CreateTable(
                 "dbo.Carrito",
@@ -118,16 +120,12 @@ namespace TrabajoF.Persistence.Migrations
                         Carritoid = c.Int(nullable: false),
                         LocalLibreriaId = c.Int(nullable: false),
                         Envio = c.Int(nullable: false),
-                        LocalLibreria_LocalLibreriaid = c.Int(),
-                        Locallibreria_LocalLibreriaid = c.Int(),
                         Cliente_Clienteid = c.Int(),
                     })
                 .PrimaryKey(t => t.Ventaid)
-                .ForeignKey("dbo.LocalxLibreria", t => t.LocalLibreria_LocalLibreriaid)
-                .ForeignKey("dbo.LocalxLibreria", t => t.Locallibreria_LocalLibreriaid)
+                .ForeignKey("dbo.LocalxLibreria", t => t.LocalLibreriaId, cascadeDelete: true)
                 .ForeignKey("dbo.Cliente", t => t.Cliente_Clienteid)
-                .Index(t => t.LocalLibreria_LocalLibreriaid)
-                .Index(t => t.Locallibreria_LocalLibreriaid)
+                .Index(t => t.LocalLibreriaId)
                 .Index(t => t.Cliente_Clienteid);
             
             CreateTable(
@@ -205,34 +203,19 @@ namespace TrabajoF.Persistence.Migrations
                     })
                 .PrimaryKey(t => t.Nacionalidadid);
             
-            CreateTable(
-                "dbo.Libros",
-                c => new
-                    {
-                        Autor_Autorid = c.Int(nullable: false),
-                        Libro_Libroid = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.Autor_Autorid, t.Libro_Libroid })
-                .ForeignKey("dbo.Autor", t => t.Autor_Autorid, cascadeDelete: true)
-                .ForeignKey("dbo.Libro", t => t.Libro_Libroid, cascadeDelete: true)
-                .Index(t => t.Autor_Autorid)
-                .Index(t => t.Libro_Libroid);
-            
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.Autor", "Nacionalidadid", "dbo.Nacionalidad");
-            DropForeignKey("dbo.Libros", "Libro_Libroid", "dbo.Libro");
-            DropForeignKey("dbo.Libros", "Autor_Autorid", "dbo.Autor");
+            DropForeignKey("dbo.Libro", "Autorid", "dbo.Autor");
             DropForeignKey("dbo.Libro", "Ventaid", "dbo.Venta");
             DropForeignKey("dbo.Libro", "Carritoid", "dbo.Carrito");
             DropForeignKey("dbo.Venta", "Cliente_Clienteid", "dbo.Cliente");
             DropForeignKey("dbo.Comprobante", "Cliente_Clienteid", "dbo.Cliente");
             DropForeignKey("dbo.Comprobante", "Comprobanteid", "dbo.Cliente");
             DropForeignKey("dbo.Pago", "Pagoid", "dbo.Venta");
-            DropForeignKey("dbo.Venta", "Locallibreria_LocalLibreriaid", "dbo.LocalxLibreria");
-            DropForeignKey("dbo.Venta", "LocalLibreria_LocalLibreriaid", "dbo.LocalxLibreria");
+            DropForeignKey("dbo.Venta", "LocalLibreriaId", "dbo.LocalxLibreria");
             DropForeignKey("dbo.LocalxLibreria", "Venta_Ventaid", "dbo.Venta");
             DropForeignKey("dbo.LocalxLibreria", "Libreria_Libreriaid", "dbo.Libreria");
             DropForeignKey("dbo.Libreria", "LocalLibreriaId", "dbo.LocalxLibreria");
@@ -242,9 +225,7 @@ namespace TrabajoF.Persistence.Migrations
             DropForeignKey("dbo.Comprobante", "Comprobanteid", "dbo.Venta");
             DropForeignKey("dbo.Carrito", "Carritoid", "dbo.Venta");
             DropForeignKey("dbo.Carrito", "Carritoid", "dbo.Cliente");
-            DropForeignKey("dbo.Libro", "Autor_Autorid", "dbo.Autor");
-            DropIndex("dbo.Libros", new[] { "Libro_Libroid" });
-            DropIndex("dbo.Libros", new[] { "Autor_Autorid" });
+            DropForeignKey("dbo.Autor", "Libro_Libroid", "dbo.Libro");
             DropIndex("dbo.Pago", new[] { "Pagoid" });
             DropIndex("dbo.Libreria", new[] { "LocalLibreriaId" });
             DropIndex("dbo.Empleado", new[] { "Libro_Libroid" });
@@ -252,17 +233,16 @@ namespace TrabajoF.Persistence.Migrations
             DropIndex("dbo.LocalxLibreria", new[] { "Venta_Ventaid" });
             DropIndex("dbo.LocalxLibreria", new[] { "Libreria_Libreriaid" });
             DropIndex("dbo.Venta", new[] { "Cliente_Clienteid" });
-            DropIndex("dbo.Venta", new[] { "Locallibreria_LocalLibreriaid" });
-            DropIndex("dbo.Venta", new[] { "LocalLibreria_LocalLibreriaid" });
+            DropIndex("dbo.Venta", new[] { "LocalLibreriaId" });
             DropIndex("dbo.Comprobante", new[] { "Cliente_Clienteid" });
             DropIndex("dbo.Comprobante", new[] { "Comprobanteid" });
             DropIndex("dbo.Carrito", new[] { "Carritoid" });
-            DropIndex("dbo.Libro", new[] { "Autor_Autorid" });
             DropIndex("dbo.Libro", new[] { "Empleadoid" });
             DropIndex("dbo.Libro", new[] { "Ventaid" });
             DropIndex("dbo.Libro", new[] { "Carritoid" });
+            DropIndex("dbo.Libro", new[] { "Autorid" });
+            DropIndex("dbo.Autor", new[] { "Libro_Libroid" });
             DropIndex("dbo.Autor", new[] { "Nacionalidadid" });
-            DropTable("dbo.Libros");
             DropTable("dbo.Nacionalidad");
             DropTable("dbo.Pago");
             DropTable("dbo.Libreria");

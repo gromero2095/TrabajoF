@@ -26,8 +26,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                 .HasMaxLength(100);
 
             HasMany(c => c.Libros)
-                 .WithMany(t => t.Autores)
-                 .Map(m => m.ToTable("Libros"));
+                 .WithRequired(t => t.Autor)
+                 .HasForeignKey(c=>c.Autorid);
+
 
         }
     }

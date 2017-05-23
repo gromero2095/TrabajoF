@@ -7,13 +7,13 @@ namespace TrabajoF.Persistence.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddConfigurationNew : IMigrationMetadata
+    public sealed partial class InitialModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddConfigurationNew));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705231949526_AddConfigurationNew"; }
+            get { return "201705232100335_InitialModel"; }
         }
         
         string IMigrationMetadata.Source
