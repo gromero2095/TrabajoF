@@ -16,17 +16,7 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
             Property(v => v.Nombre)
                 .IsRequired()
                 .HasMaxLength(255);
-
-
-            HasMany(v => v.Empleados)
-                .WithMany(t => t.Librerias)
-                .Map(m =>
-                {
-                    m.ToTable("LocalLibreria");
-                    m.MapLeftKey("Libreriaid");
-                    m.MapRightKey("Empleadoid");
-                }
-                );
+            
 
         }
     }

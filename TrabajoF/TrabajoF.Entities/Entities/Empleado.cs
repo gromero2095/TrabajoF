@@ -19,11 +19,15 @@ namespace TrabajoF.Entities
         public string Direccion { get; set; }
         public string Correo { get; set; }
         public TipoEmpleado TipoEmpleado { get; set; }
-        public List <Libreria> Librerias { get; set; }
 
         public Empleado()
         {
             TipoEmpleado = TipoEmpleado.NoDefinido;
+        }
+
+        public Empleado(int empleadoId)
+        {
+            Empleadoid = empleadoId;
         }
         
 }

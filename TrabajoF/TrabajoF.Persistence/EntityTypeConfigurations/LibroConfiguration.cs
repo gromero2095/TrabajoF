@@ -34,9 +34,9 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                      .HasForeignKey(v => v.Carritoid);
 
             //Relacion Libros - Venta
-            HasRequired(v => v.Venta)
-                     .WithMany(g => g.Libros)
-                     .HasForeignKey(v => v.Ventaid);
+            HasRequired(v => v.Venta);
+
+
 
         
 

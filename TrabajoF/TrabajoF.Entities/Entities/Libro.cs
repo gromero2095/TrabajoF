@@ -9,6 +9,7 @@ namespace TrabajoF.Entities
 {
     public class Libro
     {
+        //Varibles de instancia
         public int Libroid { get; set; }
         public string Editorial { get; set; }
         public double Precio { get; set; }
@@ -16,6 +17,8 @@ namespace TrabajoF.Entities
         public int Stock { get; set; }
         public DateTime AñoPublicacion { get; set; }
         public string Valoracion { get; set; }
+
+        //Relaciones
         public Autor Autor { get; set;}
         public int Autorid { get; set; }
         public Carrito Carrito { get; set; }
@@ -28,7 +31,14 @@ namespace TrabajoF.Entities
 
         public Libro()
         {
+            TipoLibro = TipoLibro.NoDefinido;
             Autores = new List<Autor>();
+            Categoria = Categoria.NoDefinido; 
+        }
+
+        public Libro(int AutorId)
+        {
+            Autores = new List<Autor>(AutorId);
 
         }
     }

@@ -8,7 +8,7 @@ namespace TrabajoF.Entities
 {
     public class Venta
     {
-      
+        //Variables de instancia
         public int Ventaid { get; set; }
         public string Libro { get; set; }
         public int MontoTotal { get; set; }
@@ -18,27 +18,20 @@ namespace TrabajoF.Entities
         
         public Carrito Carrito { get; set; }
         public int Carritoid { get; set; }
-        public Cliente Cliente { get; set; }
-        public int Clienteid { get; set; }
+        
         public Pago Pago{ get; set; }
         public Envio Envio { get; set; }
-        public Comprobante Comprobante { get; set; }
-        public int Comprobanteid{ get; set; }
-        public List<Libro> Libros{ get; set; }
+
 
         public Venta()
         {
-            Libros = new List<Libro>();
-        }
-        /*
-        public Venta(Cliente cliente, Pago pago, Envio envio,int libroId,int ventaId  )
-        {
-            Ventaid = ventaId;
-            Cliente = cliente;
-            Pago = pago;
-            Envio = envio;
+            Envio = Envio.Recojo_Libreria;
         }
 
-    */
+        public Venta(Carrito carrito, Pago pago)
+        {
+            Carrito = carrito;
+            Pago = pago;
+        }
     }
 }
