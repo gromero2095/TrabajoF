@@ -30,7 +30,7 @@ namespace TrabajoF.Entities
             LocalxLibreria = new List<Libreria>();
         }
 
-  /*      public LocalLibreria(int localLibreriaId, string direccion, int empleadoId)
+    public LocalLibreria(int localLibreriaId, string direccion, int empleadoId)
         {
             LocalLibreriaid = localLibreriaId;
             Direccion = direccion;
@@ -38,6 +38,6 @@ namespace TrabajoF.Entities
             Empleados = new List<Empleado>(empleadoId);
 
         }
-      */  
+      
 }
 }

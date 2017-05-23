@@ -15,7 +15,7 @@ namespace TrabajoF.Entities
 
         public Nacionalidad()
         {
-            
+            Autores = new List<Autor>();
           
         }
 }
