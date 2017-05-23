@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,10 @@ namespace TrabajoF.Entities
         public int RUCLibreria { get; set; }
         public List<LocalLibreria> LocalLibrerias { get; set; }
 
-        
+        [ForeignKey("LocalID")]
+        public LocalLibreria LocalLibreria { get; set; }
+        public int LocalLibreriaId { get; set; }
+
 
         public Libreria()
         {

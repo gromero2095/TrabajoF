@@ -20,11 +20,17 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                 .IsRequired()
                 .HasMaxLength(255);
 
-           HasMany (v => v.LocalLibrerias)
-                .WithRequired(l => l.Libreria)
-                .HasForeignKey(v => v.LocalLibreriaid);
+            //     HasMany (v => v.LocalLibrerias)
+            //           .WithRequired(l => l.Libreria)
+            //          .HasForeignKey(v => v.LocalLibreriaid);
 
+            HasRequired(i => i.LocalLibreria)
+                 .WithRequiredDependent()
+                 .WillCascadeOnDelete(false);
 
+            HasRequired<LocalLibreria>(i => i.LocalLibreria)
+                .WithMany(e => e.LocalxLibreria)
+                .HasForeignKey(i => i.LocalLibreriaId);
 
         }
     }

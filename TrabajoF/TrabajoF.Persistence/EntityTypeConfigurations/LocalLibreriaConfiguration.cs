@@ -12,7 +12,7 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
     {
         public LocalLibreriaConfiguration()
         {
-            ToTable("LocalLibreria")
+            ToTable("LocalxLibreria")
                 .HasKey(c => c.LocalLibreriaid);
 
             Property(v => v.Direccion)

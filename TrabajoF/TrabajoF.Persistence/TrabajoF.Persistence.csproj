@@ -58,6 +58,10 @@
     <Compile Include="EntityTypeConfigurations\NacionalidadConfiguration.cs" />
     <Compile Include="EntityTypeConfigurations\PagoConfiguration.cs" />
     <Compile Include="EntityTypeConfigurations\VentaConfiguration.cs" />
+    <Compile Include="Migrations\201705231949526_AddConfigurationNew.cs" />
+    <Compile Include="Migrations\201705231949526_AddConfigurationNew.Designer.cs">
+      <DependentUpon>201705231949526_AddConfigurationNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\AutorRepository.cs" />
     <Compile Include="Repositories\CarritoRepository.cs" />
@@ -85,6 +89,10 @@
       <Name>TrabajoF.Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705231949526_AddConfigurationNew.resx">
+      <DependentUpon>201705231949526_AddConfigurationNew.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
