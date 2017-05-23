@@ -26,10 +26,10 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                 .HasMaxLength(100);
 
             //Relacion Libro - Autor
-            HasMany(c => c.Autores)
+      /*      HasMany(c => c.Autores)
                  .WithMany(t => t.Libros)
                  .Map(m => m.ToTable("Autores"));
-
+*/
 
 
         

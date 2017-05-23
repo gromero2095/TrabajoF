@@ -15,9 +15,11 @@ namespace TrabajoF.Entities
         
         public Empleado Empleado { get; set; }
         public Libreria Libreria { get; set; }
+        public Venta Venta { get; set; }
         public int Libreriaid { get; set; }
         private List<Empleado> Empleados;
         public List<Venta> Ventas { get; set; }
+        
 
         public LocalLibreria(int localLibreriaId, string direccion, int empleadoId)
         {

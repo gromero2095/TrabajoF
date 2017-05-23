@@ -41,8 +41,8 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                  .WithRequired(c => c.Empleados)
                  .HasForeignKey(c => c.Empleadoid);
 
-            HasRequired(c => c.Locallibreria)
-                 .WithRequiredPrincipal(c => c.Empleado);
+     //       HasRequired(c => c.Locallibreria)
+       //          .WithRequiredPrincipal(c => c.Empleado);
         }
     }
 }

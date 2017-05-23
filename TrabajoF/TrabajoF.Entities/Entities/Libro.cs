@@ -25,7 +25,7 @@ namespace TrabajoF.Entities
         public int Carritoid { get; set; }
         public TipoLibro TipoLibro { get; set; }     
         public Categoria Categoria { get; set; }
-        public List<Autor> Autores { get; set; }
+        public Collection<Autor> Autores { get; set; }
         public Venta Venta { get; set; }
         public int? Ventaid { get; set; }
         public Empleado Empleados { get; set; }
@@ -34,7 +34,7 @@ namespace TrabajoF.Entities
         public Libro()
         {
             TipoLibro = TipoLibro.NoDefinido;
-           Autores = new List<Autor>();
+           Autores = new Collection<Autor>();
             Categoria = Categoria.NoDefinido; 
         }
         
