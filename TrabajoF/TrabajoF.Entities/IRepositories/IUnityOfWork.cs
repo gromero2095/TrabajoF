@@ -28,6 +28,8 @@ namespace TrabajoF.Entities.IRepositories
         //Método que guardará los cambios en la base de datos.
         int SaveChanges();
 
+        void StateModified(Object entity);
+
 
     }
 }

@@ -34,7 +34,7 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
 
             HasMany(c => c.Libros)
                 .WithRequired(l => l.Carrito)
-                .HasForeignKey(c => c.Carritoid);
+                .HasForeignKey(l => l.Carritoid);
            
 
         }

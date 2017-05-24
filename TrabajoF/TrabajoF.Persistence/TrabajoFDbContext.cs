@@ -40,6 +40,7 @@ namespace TrabajoF.Persistence
             modelBuilder.Configurations.Add(new PagoConfiguration());
             modelBuilder.Configurations.Add(new VentaConfiguration());
 
+            Database.SetInitializer<TrabajoFDbContext>(null);
             base.OnModelCreating(modelBuilder);
 
             /*

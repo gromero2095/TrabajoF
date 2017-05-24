@@ -16,8 +16,11 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                 .HasKey(c => c.Autorid);
 
             Property(v => v.Nombre)
+                .HasColumnType("varchar")
                 .IsRequired()
-                .HasMaxLength(50);
+                .HasMaxLength(50)
+                .HasColumnOrder(2);
+
             Property(v => v.Apellido)
                 .IsRequired()
                 .HasMaxLength(100);
@@ -27,7 +30,7 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
 
             HasMany(c => c.Libros)
                  .WithRequired(t => t.Autor)
-                 .HasForeignKey(c=>c.Autorid);
+                 .HasForeignKey(t=>t.Autorid);
 
 
         }

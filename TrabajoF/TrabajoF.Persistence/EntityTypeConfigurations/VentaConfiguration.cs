@@ -24,14 +24,15 @@ namespace TrabajoF.Persistence.EntityTypeConfigurations
                 .IsRequired()
                 .HasMaxLength(50);
 
-            HasOptional(c => c.Carrito)
-                .WithRequired(c => c.Venta);
+            HasRequired(c => c.Carrito)
+                .WithRequiredPrincipal(c => c.Venta);
 
             HasRequired(c => c.Pago)
                 .WithRequiredPrincipal(c => c.Venta);
 
             HasRequired(c => c.Comprobante)
                 .WithRequiredPrincipal(c => c.Venta);
+
 
         }
     }

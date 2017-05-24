@@ -70,6 +70,28 @@ namespace TrabajoF.Persistence.Repositories
 
         }
 
+        IAutorRepository IUnityOfWork.Autors => throw new NotImplementedException();
+
+        ICarritoRepository IUnityOfWork.Carritos => throw new NotImplementedException();
+
+        IClienteRepository IUnityOfWork.Clientes => throw new NotImplementedException();
+
+        IComprobanteRepository IUnityOfWork.Comprobantes => throw new NotImplementedException();
+
+        IEmpleadoRepository IUnityOfWork.Empleados => throw new NotImplementedException();
+
+        ILibreriaRepository IUnityOfWork.Librerias => throw new NotImplementedException();
+
+        ILibroRepository IUnityOfWork.Libros => throw new NotImplementedException();
+
+        ILocalLibreriaRepository IUnityOfWork.LocalLibrerias => throw new NotImplementedException();
+
+        INacionalidadRepository IUnityOfWork.Nacionalidads => throw new NotImplementedException();
+
+        IPagoRepository IUnityOfWork.Pagos => throw new NotImplementedException();
+
+        IVentaRepository IUnityOfWork.Ventas => throw new NotImplementedException();
+
         public void Dispose()
         {
             _Context.Dispose();
@@ -78,6 +100,21 @@ namespace TrabajoF.Persistence.Repositories
         public int SaveChanges()
         {
             return _Context.SaveChanges();
+        }
+
+        int IUnityOfWork.SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IUnityOfWork.StateModified(object entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IDisposable.Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 }

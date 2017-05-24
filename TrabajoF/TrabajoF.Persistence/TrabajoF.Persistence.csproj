@@ -58,9 +58,13 @@
     <Compile Include="EntityTypeConfigurations\NacionalidadConfiguration.cs" />
     <Compile Include="EntityTypeConfigurations\PagoConfiguration.cs" />
     <Compile Include="EntityTypeConfigurations\VentaConfiguration.cs" />
-    <Compile Include="Migrations\201705232100335_InitialModel.cs" />
-    <Compile Include="Migrations\201705232100335_InitialModel.Designer.cs">
-      <DependentUpon>201705232100335_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201705242030599_InitialModel.cs" />
+    <Compile Include="Migrations\201705242030599_InitialModel.Designer.cs">
+      <DependentUpon>201705242030599_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705242049270_SecondModel2.cs" />
+    <Compile Include="Migrations\201705242049270_SecondModel2.Designer.cs">
+      <DependentUpon>201705242049270_SecondModel2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\AutorRepository.cs" />
@@ -90,8 +94,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705232100335_InitialModel.resx">
-      <DependentUpon>201705232100335_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705242030599_InitialModel.resx">
+      <DependentUpon>201705242030599_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705242049270_SecondModel2.resx">
+      <DependentUpon>201705242049270_SecondModel2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
