@@ -8,5 +8,6 @@ namespace TrabajoF.Entities.IRepositories
 {
     public interface ICarritoRepository : IRepository<Carrito>
     {
+
     }
 }

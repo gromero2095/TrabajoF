@@ -17,7 +17,7 @@ namespace TrabajoF.Persistence.Repositories
             _Context = context;
         }
 
-        public CarritoRepository()
+        private CarritoRepository()
         {
 
         }

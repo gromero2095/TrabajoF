@@ -20,5 +20,15 @@ namespace TrabajoF.Persistence.Repositories
         {
 
         }
+
+        IEnumerable<Empleado> IEmpleadoRepository.GetEmpleadosByTipoEmpleado(TipoEmpleado TipoEmpleado)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<Empleado> IEmpleadoRepository.GetEmpleadossWithLocalLibreria(int pageIndex, int pageSize)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

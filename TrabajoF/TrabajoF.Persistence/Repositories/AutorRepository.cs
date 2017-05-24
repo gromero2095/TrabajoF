@@ -23,5 +23,19 @@ namespace TrabajoF.Persistence.Repositories
             _Context = context;
         }
 
+        IEnumerable<Autor> IAutorRepository.GetAutoresWithLibros(int pageIndex, int pageSize)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<Autor> IAutorRepository.GetAutoresByTipoLibro(TipoLibro TipoLibro)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<Autor> IAutorRepository.GetAutoresByCategoria(Categoria Categoria)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

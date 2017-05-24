@@ -20,5 +20,10 @@ namespace TrabajoF.Persistence.Repositories
         {
 
         }
+
+        IEnumerable<Venta> IVentaRepository.GetVentasByTipoPago(TipoPago TipoPago)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace TrabajoF.Entities.IRepositories
 {
     public interface IRepository<TEntity> where TEntity : class 
     {
-        /*
+        
 
         //**** IMPORTANTE ****
        //Métodos estandar que todas las tablas deben tener
@@ -45,6 +45,6 @@ namespace TrabajoF.Entities.IRepositories
         //Elimina un grupo de registros al repositorio ( SQL SERVER) a la tabla TEntity
         void DeleteRange(IEnumerable<TEntity> entities);
 
-    */
+    
     }
 }
