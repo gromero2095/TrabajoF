@@ -1,0 +1,70 @@
+﻿@model IEnumerable<TrabajoF.Entities.Venta>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Locallibreria.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Libro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MontoTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaTrans)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Carritoid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Envio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Locallibreria.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Libro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MontoTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaTrans)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carritoid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Envio)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Ventaid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Ventaid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Ventaid })
+        </td>
+    </tr>
+}
+
+</table>

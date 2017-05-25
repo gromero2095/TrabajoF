@@ -9,9 +9,9 @@ namespace TrabajoF.Entities.IRepositories
     public interface IEmpleadoRepository : IRepository <Empleado>
     {
 
-        IEnumerable<Empleado> GetEmpleadossWithLocalLibreria(int pageIndex, int pageSize);
+   //     IEnumerable<Empleado> GetEmpleadossWithLocalLibreria(int pageIndex, int pageSize);
 
-        IEnumerable<Empleado> GetEmpleadosByTipoEmpleado(TipoEmpleado TipoEmpleado);
+     //   IEnumerable<Empleado> GetEmpleadosByTipoEmpleado(TipoEmpleado TipoEmpleado);
 
     }
 }

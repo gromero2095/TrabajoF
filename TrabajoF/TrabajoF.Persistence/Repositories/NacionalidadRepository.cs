@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,15 +11,19 @@ namespace TrabajoF.Persistence.Repositories
 {
     public class NacionalidadRepository : Repository<Nacionalidad>, INacionalidadRepository
     {
-        private readonly TrabajoFDbContext _Context;
+        /*     private readonly TrabajoFinalDbContext _Context;
 
-        public NacionalidadRepository(TrabajoFDbContext context)
-        {
-            _Context = context;
-        }
-        private NacionalidadRepository()
-        {
+             public NacionalidadRepository(TrabajoFinalDbContext context)
+             {
+                 _Context = context;
+             }
+             private NacionalidadRepository()
+             {
 
+             }
+             */
+        public NacionalidadRepository(TrabajoFinalDbContext context) : base(context)
+        {
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,20 +11,24 @@ namespace TrabajoF.Persistence.Repositories
 {
     public class VentaRepository : Repository<Venta>, IVentaRepository
     {
-        private readonly TrabajoFDbContext _Context;
+        /*   private readonly TrabajoFinalDbContext _Context;
 
-        public VentaRepository(TrabajoFDbContext context)
-        {
-            _Context = context;
-        }
-        private VentaRepository()
-        {
+           public VentaRepository(TrabajoFinalDbContext context)
+           {
+               _Context = context;
+           }
+           private VentaRepository()
+           {
 
-        }
+           }
 
-        IEnumerable<Venta> IVentaRepository.GetVentasByTipoPago(TipoPago TipoPago)
+           IEnumerable<Venta> IVentaRepository.GetVentasByTipoPago(TipoPago TipoPago)
+           {
+               throw new NotImplementedException();
+           }
+           */
+        public VentaRepository(TrabajoFinalDbContext context) : base(context)
         {
-            throw new NotImplementedException();
         }
     }
 }

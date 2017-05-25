@@ -8,7 +8,7 @@ namespace TrabajoF.Entities.IRepositories
 {
     public interface IVentaRepository : IRepository <Venta>
     {
-        IEnumerable<Venta> GetVentasByTipoPago(TipoPago TipoPago);
+   //     IEnumerable<Venta> GetVentasByTipoPago(TipoPago TipoPago);
 
     }
 }

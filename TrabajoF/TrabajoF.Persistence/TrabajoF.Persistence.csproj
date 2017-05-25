@@ -66,6 +66,10 @@
     <Compile Include="Migrations\201705242049270_SecondModel2.Designer.cs">
       <DependentUpon>201705242049270_SecondModel2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705242247010_AddConfigurationNewthree.cs" />
+    <Compile Include="Migrations\201705242247010_AddConfigurationNewthree.Designer.cs">
+      <DependentUpon>201705242247010_AddConfigurationNewthree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\AutorRepository.cs" />
     <Compile Include="Repositories\CarritoRepository.cs" />
@@ -99,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705242049270_SecondModel2.resx">
       <DependentUpon>201705242049270_SecondModel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705242247010_AddConfigurationNewthree.resx">
+      <DependentUpon>201705242247010_AddConfigurationNewthree.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

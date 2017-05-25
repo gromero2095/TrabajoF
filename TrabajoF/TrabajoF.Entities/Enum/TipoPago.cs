@@ -8,6 +8,7 @@ namespace TrabajoF.Entities
 {
     public enum TipoPago
     {
-        Efectivo, Tarjeta
+        Efectivo,
+        Tarjeta
     }
 }

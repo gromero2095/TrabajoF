@@ -9,7 +9,7 @@ namespace TrabajoF.Persistence.Repositories
 {
     public class UnityOfWork : IUnityOfWork
     {
-        private readonly TrabajoFDbContext _Context;
+        private readonly TrabajoFinalDbContext _Context;
         private static UnityOfWork _Instance;
         private static readonly object _Lock = new object();
 
@@ -28,11 +28,13 @@ namespace TrabajoF.Persistence.Repositories
         //Se define el constructor por defecto como privado para que se fuerce a utilizar
         // la propiedad Instance
   
-        private UnityOfWork()
+        private UnityOfWork(TrabajoFinalDbContext context)
         {
             // Se crea un unico contexto de base de datos
             // para apuntar todos los repositorios a la misma base de datos
-            _Context = new TrabajoFDbContext();
+            _Context = context;
+
+            //     _Context = new TrabajoFinalDbContext();
 
             Autors = new AutorRepository(_Context);
             Carritos = new CarritoRepository(_Context);
@@ -53,7 +55,7 @@ namespace TrabajoF.Persistence.Repositories
         // Con este patron se asegura que en cualquier parte del codigo que se quiera
         // instancia la base de datos, se devuelva una unica referencia.
 
-        public static UnityOfWork Instance
+   /*     public static UnityOfWork Instance
         {
             get
             {
@@ -69,6 +71,7 @@ namespace TrabajoF.Persistence.Repositories
             }
 
         }
+        */
 
         IAutorRepository IUnityOfWork.Autors => throw new NotImplementedException();
 
@@ -102,19 +105,25 @@ namespace TrabajoF.Persistence.Repositories
             return _Context.SaveChanges();
         }
 
-        int IUnityOfWork.SaveChanges()
+        public void StateModified(object Entity)
         {
-            throw new NotImplementedException();
+            _Context.Entry(Entity).State = System.Data.Entity.EntityState.Modified;
         }
 
-        void IUnityOfWork.StateModified(object entity)
-        {
-            throw new NotImplementedException();
-        }
+        /*     int IUnityOfWork.SaveChanges()
+             {
+                 throw new NotImplementedException();
+             }
 
-        void IDisposable.Dispose()
-        {
-            throw new NotImplementedException();
-        }
+             void IUnityOfWork.StateModified(object entity)
+             {
+                 throw new NotImplementedException();
+             }
+
+             void IDisposable.Dispose()
+             {
+                 throw new NotImplementedException();
+             }
+             */
     }
 }

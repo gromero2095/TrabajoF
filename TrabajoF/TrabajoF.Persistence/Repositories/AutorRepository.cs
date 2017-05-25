@@ -10,14 +10,14 @@ namespace TrabajoF.Persistence.Repositories
 {
     public class AutorRepository : Repository <Autor>, IAutorRepository
     {
-        private readonly TrabajoFDbContext _Context;
+   //     private readonly TrabajoFinalDbContext _Context;
 
-        private AutorRepository()
+        public AutorRepository(TrabajoFinalDbContext context) : base(context)
         {
 
         }
 
-        public AutorRepository(TrabajoFDbContext context)
+  /*      public AutorRepository(TrabajoFinalDbContext context)
         {
 
             _Context = context;
@@ -37,5 +37,7 @@ namespace TrabajoF.Persistence.Repositories
         {
             throw new NotImplementedException();
         }
+
+    */
     }
 }

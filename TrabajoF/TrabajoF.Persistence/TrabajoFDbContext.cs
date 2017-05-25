@@ -10,7 +10,7 @@ using TrabajoF.Persistence.EntityTypeConfigurations;
 
 namespace TrabajoF.Persistence
 {
-    public class TrabajoFDbContext : DbContext
+    public class TrabajoFinalDbContext : DbContext
     {
         public DbSet<Autor> Autores { get; set; }
         public DbSet<Carrito> Carritos { get; set; }
@@ -40,7 +40,7 @@ namespace TrabajoF.Persistence
             modelBuilder.Configurations.Add(new PagoConfiguration());
             modelBuilder.Configurations.Add(new VentaConfiguration());
 
-            Database.SetInitializer<TrabajoFDbContext>(null);
+            Database.SetInitializer<TrabajoFinalDbContext>(null);
             base.OnModelCreating(modelBuilder);
 
             /*
@@ -67,5 +67,6 @@ namespace TrabajoF.Persistence
 
         }
 
+        public System.Data.Entity.DbSet<TrabajoF.Entities.Pago> Pagoes { get; set; }
     }
 }

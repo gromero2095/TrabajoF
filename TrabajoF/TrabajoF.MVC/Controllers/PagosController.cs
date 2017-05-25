@@ -11,112 +11,112 @@ using TrabajoF.Persistence;
 
 namespace TrabajoF.MVC.Controllers
 {
-    public class LibreriasController : Controller
+    public class PagosController : Controller
     {
-        private TrabajoFDbContext db = new TrabajoFDbContext();
+        private TrabajoFinalDbContext db = new TrabajoFinalDbContext();
 
-        // GET: Librerias
+        // GET: Pagos
         public ActionResult Index()
         {
-            var librerias = db.Librerias.Include(l => l.LocalLibreria);
-            return View(librerias.ToList());
+            var pagoes = db.Pagoes.Include(p => p.Venta);
+            return View(pagoes.ToList());
         }
 
-        // GET: Librerias/Details/5
+        // GET: Pagos/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Libreria libreria = db.Librerias.Find(id);
-            if (libreria == null)
+            Pago pago = db.Pagoes.Find(id);
+            if (pago == null)
             {
                 return HttpNotFound();
             }
-            return View(libreria);
+            return View(pago);
         }
 
-        // GET: Librerias/Create
+        // GET: Pagos/Create
         public ActionResult Create()
         {
-            ViewBag.LocalLibreriaId = new SelectList(db.LocalLibrerias, "LocalLibreriaid", "Direccion");
+            ViewBag.Pagoid = new SelectList(db.Ventas, "Ventaid", "Libro");
             return View();
         }
 
-        // POST: Librerias/Create
+        // POST: Pagos/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Libreriaid,Nombre,RUCLibreria,LocalLibreriaId")] Libreria libreria)
+        public ActionResult Create([Bind(Include = "Pagoid,Descripcion,TipoPago")] Pago pago)
         {
             if (ModelState.IsValid)
             {
-                db.Librerias.Add(libreria);
+                db.Pagoes.Add(pago);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.LocalLibreriaId = new SelectList(db.LocalLibrerias, "LocalLibreriaid", "Direccion", libreria.LocalLibreriaId);
-            return View(libreria);
+            ViewBag.Pagoid = new SelectList(db.Ventas, "Ventaid", "Libro", pago.Pagoid);
+            return View(pago);
         }
 
-        // GET: Librerias/Edit/5
+        // GET: Pagos/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Libreria libreria = db.Librerias.Find(id);
-            if (libreria == null)
+            Pago pago = db.Pagoes.Find(id);
+            if (pago == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.LocalLibreriaId = new SelectList(db.LocalLibrerias, "LocalLibreriaid", "Direccion", libreria.LocalLibreriaId);
-            return View(libreria);
+            ViewBag.Pagoid = new SelectList(db.Ventas, "Ventaid", "Libro", pago.Pagoid);
+            return View(pago);
         }
 
-        // POST: Librerias/Edit/5
+        // POST: Pagos/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Libreriaid,Nombre,RUCLibreria,LocalLibreriaId")] Libreria libreria)
+        public ActionResult Edit([Bind(Include = "Pagoid,Descripcion,TipoPago")] Pago pago)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(libreria).State = EntityState.Modified;
+                db.Entry(pago).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.LocalLibreriaId = new SelectList(db.LocalLibrerias, "LocalLibreriaid", "Direccion", libreria.LocalLibreriaId);
-            return View(libreria);
+            ViewBag.Pagoid = new SelectList(db.Ventas, "Ventaid", "Libro", pago.Pagoid);
+            return View(pago);
         }
 
-        // GET: Librerias/Delete/5
+        // GET: Pagos/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Libreria libreria = db.Librerias.Find(id);
-            if (libreria == null)
+            Pago pago = db.Pagoes.Find(id);
+            if (pago == null)
             {
                 return HttpNotFound();
             }
-            return View(libreria);
+            return View(pago);
         }
 
-        // POST: Librerias/Delete/5
+        // POST: Pagos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Libreria libreria = db.Librerias.Find(id);
-            db.Librerias.Remove(libreria);
+            Pago pago = db.Pagoes.Find(id);
+            db.Pagoes.Remove(pago);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
